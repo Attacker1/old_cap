@@ -1,0 +1,65 @@
+@import (less) "../../themes/components/tree.less";
+
+  .@{tree-prefix} {
+
+    .@{prefix}search{
+      padding-left: 3px;
+      padding-right: 3px;
+    }
+
+    &-show {
+
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      &-space {
+        width: 0;
+      }
+      &-expand {
+        .h-icon-angle-right {
+          font-weight: bold;
+          color: @tree-disable-color;
+          font-size: 15px;
+        }
+      }
+      &-desc {
+        word-break: @tree-word-break;
+        width: 100%;
+      }
+
+      &-disabled &-desc{
+        color: @tree-disable-color;
+      }
+      &-disabled {
+        div[disabled=disabled] {
+
+        }
+      }
+    }
+
+    &.h-tree-theme-item-selected {
+      &.@{tree-prefix}-single {
+        .@{tree-prefix}-show-selected .@{tree-prefix}-show-desc {
+          background-color: @tree-primary-color;
+        }
+      }
+      &.@{tree-prefix}-multiple .@{tree-prefix}-show-desc{
+        &:hover{
+          color: @tree-primary-color;
+        }
+      }
+    }
+  }
+
+  @tree-branch1 : ~".@{tree-prefix}>.@{tree-prefix}-body>.@{tree-prefix}-li";
+  @tree-branch2 : ~"@{tree-branch1}>.@{tree-prefix}-ul>.@{tree-prefix}-li";
+  @tree-branch3 : ~"@{tree-branch2}>.@{tree-prefix}-ul>.@{tree-prefix}-li";
+
+  @{tree-branch2}>.@{tree-prefix}-show {
+      margin-left: 6px;
+  }
+
+  @{tree-branch3}>.@{tree-prefix}-show {
+    margin-left: 12px;
+  }

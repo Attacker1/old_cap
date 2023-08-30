@@ -1,0 +1,356 @@
+
+@layout-prefix: ~"@{prefix}layout";
+@header-prefix: ~"@{prefix}layout-header";
+@content-prefix: ~"@{prefix}layout-content";
+@footer-prefix: ~"@{prefix}layout-footer";
+@sider-prefix: ~"@{prefix}layout-sider";
+
+
+
+.@{layout-prefix} {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  min-height: 0;
+  z-index: 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: #6a6a6a;
+  .h-func-clearfix();
+
+  & &{
+    overflow: hidden;
+  }
+  &&-has-sider{
+    flex-direction: row;
+  }
+  &&-header-fixed {
+    padding-top: @layout-header-height;
+    > .@{header-prefix} {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+      z-index: 2;
+    }
+    > .@{content-prefix} {
+      z-index: 1;
+    }
+    > .@{sider-prefix} {
+      z-index: 1;
+    }
+  }
+
+  &&-sider-fixed {
+    padding-left: @layout-sider-width;
+    > .@{content-prefix} {
+      z-index: 1;
+    }
+    > .@{sider-prefix} {
+      position: fixed;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      overflow: auto;
+      z-index: 2;
+    }
+  }
+
+  &&-sider-fixed&-sider-collapsed {
+    padding-left: @layout-sider-collapse-width;
+  }
+
+  &&-sider-collapsed {
+    > .@{sider-prefix} {
+      width: @layout-sider-collapse-width;
+      flex: 0 0 @layout-sider-collapse-width;
+      max-width: @layout-sider-collapse-width;
+      min-width: @layout-sider-collapse-width;
+      overflow: initial;
+      z-index: 2;
+    }
+  }
+  &&-header-fixed > &-sider-fixed > .@{sider-prefix}{
+    top: @layout-header-height;
+  }
+  &&-has-sider > &-header-fixed > .@{header-prefix}{
+    left: @layout-sider-width;
+  }
+  &&-sider-collapsed > &-header-fixed > .@{header-prefix} {
+    left: @layout-sider-collapse-width;
+  }
+}
+
+.@{header-prefix}{
+  height: @layout-header-height;
+  line-height: @layout-header-height;
+  z-index: 1;
+  &-theme-dark {
+    color: rgba(255,255,255,0.65);
+    background: @menu-dark-color;
+  }
+  &-theme-white {
+    background: #FFF;
+  }
+}
+
+.@{sider-prefix} {
+  transition: all .2s;
+  position: relative;
+  flex: 0 0 @layout-sider-width;
+  max-width: @layout-sider-width;
+  min-width: @layout-sider-width;
+  width: @layout-sider-width;
+  z-index: 1;
+  background: @sider-background;
+  border-right: 1px solid @primary-color;
+
+  &-theme-dark {
+    background: @menu-dark-color;
+  }
+  &-theme-white {
+    background: #FFF;
+  }
+}
+
+.@{content-prefix} {
+  position: relative;
+  flex: auto;
+  height: calc(100vh - @layout-header-height);
+  box-sizing: border-box;
+  border: 12px solid @silver-color;
+
+}
+
+.@{content-prefix} {
+  box-sizing: border-box;
+  //padding: 4px;
+}
+
+.@{footer-prefix} {
+  height: @layout-footer-height;
+}
+
+.flex-box {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 20px;
+  overflow: hidden;
+
+}
+
+.header {
+
+  &-left {
+    .flex-box;
+    justify-content: flex-start;
+    > * {
+      margin-right: 4px;
+    }
+    .h-btn {margin-top: 0;}
+  }
+  &-center {
+    .flex-box;
+    justify-content: center;
+    .h-btn {margin-top: 0;}
+  }
+  &-right {
+    .flex-box;
+    justify-content: flex-end;
+    .h-btn {margin-top: 0;}
+  }
+  &-avatar {
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    &-user {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+    }
+    img {
+      height: 46px;
+      width: auto;
+    }
+  }
+}
+// 39afd1 356ba8
+
+.layout {
+  &-logo {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-bottom: 12px;
+    img {
+      width: 20px;
+      margin-left: 5px;
+    }
+
+  }
+}
+.sider {
+  &-collapse {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  &-logo {
+    display: inline-flex;
+    align-items: center;
+    span {
+      display: inline-block;
+      margin-left: 6px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+  }
+}
+
+
+.app-header-message-vue {
+  cursor: pointer;
+  margin-right: 15px;
+  width: 70px;
+  .h-dropdowncustom-show {
+    height: @layout-header-height;
+    .app-header-icon-item {
+      margin-right: 0;
+    }
+    &.h-pop-trigger {
+      //background: @hover-background-color;
+      background: @primary1-color;
+    }
+    &-content {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+.app-message-dropdown-dropdown-container {
+  width: 300px;
+  min-height: 300px;
+  .message-list-container {
+    .common-list-item {
+      cursor: pointer;
+      padding: 0px 25px;
+      &:hover {
+        background: @hover-background-color;
+      }
+      .description {
+        font-size: 13px;
+        color: @gray-color;
+      }
+
+      .title {
+        position: relative;
+      }
+
+      &.readed {
+        color: @gray-color;
+      }
+
+      &.unReaded .title:before{
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: @red-color;
+        border-radius: 5px;
+        left: -10px;
+        top: 54px;
+      }
+    }
+  }
+}
+
+button {
+  box-shadow: none!important;
+  //border-radius: 3px!important;
+  &:before {
+    font-family: 'heyuiadmin';
+    padding-right: 2px;
+    vertical-align: bottom;
+  }
+}
+//.h-btn-xs {
+//  display: inline-flex;
+//  font-size: 10px;
+//  align-items: center;
+//  height: 17px!important;
+//}
+
+.a-btn-xs {
+  line-height: 1;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 2px 6px;
+    display: inline-flex;
+    font-size: 10px;
+    align-items: center;
+    height: 17px!important;
+  border-radius: 2px;
+}
+.blue {
+  color: @white-color;
+  background: @blue-color;
+}
+.linked {
+  color: @blue-color;
+  font-weight: bold;
+  border-bottom: 1px dashed @blue-color;
+  &:hover {
+    opacity: .7;
+    color: @blue-color!important;
+    border-bottom: transparent;
+  }
+
+}
+
+.h-switch.readonly {
+  .h-switch-span {
+    background-color: @green-color!important;
+  }
+}
+
+.h-table {
+  th {
+    font-size: 12px;
+    font-weight: bold;
+    opacity: .5;
+  }
+}
+.btn-route {
+  box-shadow: none!important;
+  &:before {
+    font-family: 'heyuiadmin';
+    padding-right: 2px;
+    vertical-align: bottom;
+  }
+}
+.small {
+  font-size: 11px!important;
+  border-radius: 2px!important;
+  padding: 2px 8px!important;
+}
+.link {
+  cursor: pointer!important;
+  &:hover {
+    //color: inherit!important;
+    opacity: .8!important;
+  }
+}
+//.h-btn {
+//  background-color: @silver-color;
+//}

@@ -1,0 +1,657 @@
+/*22-04-2021*/
+.w-15{
+    width: 15% !important;
+}
+
+.display-inline-block{
+    display: inline-block !important;
+}
+
+.close-btn{
+    z-index: 20;
+    position: relative;
+    top: -245px;
+    left: 150px;
+    cursor: pointer;
+}
+#image-1 {
+    margin:20px !important;
+    background: no-repeat url("/app-assets/images/backgrounds/no-main-photo.jpg")  50% / 100%;;
+}
+#image-2 {
+    margin:20px !important;
+}
+.dropzone, .dz-preview,.dz-image {
+    border-radius:0 !important;
+    width: 150px !important;
+    height: 225px !important;
+    border:  1px dotted;
+    margin: 0 !important;
+    padding: 0!important;
+}
+
+.notes_thumb {
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem !important;
+}
+
+.price {
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem !important;
+}
+.notes_name{
+    margin-top: 3px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 1.1rem !important;
+    opacity: 0.85;
+}
+.sku {
+    margin-top: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.brand {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.advice-images{
+    background: url("/app-assets/images/backgrounds/advice-photo-bg.png")  no-repeat center;
+    opacity: 1;
+}
+
+
+label {
+    font-weight: bold
+}
+
+
+ul {
+    margin-left: 0 !important;
+    list-style: none;
+    padding-inline-start: 10px;
+
+
+}
+ul li {
+    margin-left: 0 !important;
+    padding-top: 10px !important;
+}
+.advice {
+    margin-top: -25px;
+}
+
+.price-info{
+    margin-top: 20px;
+    /*list-style-image: url(/app-assets/images/capsula/logo-capsula_20х_20х.png);*/
+}
+
+.price-info li{
+    background: url("/app-assets/images/capsula/logo-capsula_20х_20х.png") no-repeat left center;
+    padding-left: 30px;
+}
+
+.product-advice-div{
+    border: 1px dotted lightgray;
+    min-height: 120px;
+    padding: 20px;
+}
+
+.delete-product-advice-left{
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.delete-custom-advice-left{
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.note-print-form{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+.note-print-form tr{
+
+}
+
+.print-table-head{
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.note-print-form-text{
+     margin-top: 30px;
+     font-size: 1.5rem;
+     font-weight: normal;
+     max-height: 495px;
+     overflow: hidden;
+ }
+
+.note-print-form-text p {
+    line-height: 1.8rem !important;
+}
+
+.note-print-form-text  > li:before{
+    position: absolute;
+    left: 10px;
+    content: url("/app-assets/images/capsula/logo-capsula_20х_20х.png");
+
+}
+.note-print-form-text  > li{
+    padding-left: 20px;
+}
+
+.note-print-form-text-2{
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: normal;
+    max-height: 530px;
+    overflow: hidden;
+}
+
+.note-print-form-text-2 p {
+    line-height: 1.8rem !important;
+}
+
+.note-print-form-text-2  > li:before{
+    position: absolute;
+    left: 10px;
+    content: url("/app-assets/images/capsula/logo-capsula_20х_20х.png");
+
+}
+.note-print-form-text-2  > li{
+    padding-left: 20px;
+}
+
+
+.btm-border{
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+
+.print-table th, .print-table td {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.note-print-price {
+    min-width: 130px;
+    min-height: 40px;
+    margin-top: 15px;
+}
+
+.list-1-product-images{
+    -webkit-box-shadow: 0px 0px 4px 0px #000000 !important;
+    box-shadow: 0px 0px 4px 0px #000000 !important;
+    background-color: white;
+}
+
+.list-1-product-name{
+    padding-top: 5px;
+}
+
+
+.list-1-brand{
+    padding-top: 5px;
+    font-size: 0.7rem ;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.images-container{
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    box-orient: horizontal;
+    flex-direction: row;
+
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    justify-content: center;
+
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    align-items: center;
+
+    background-color: red;
+}
+
+
+
+.cell{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+
+    padding: 0px;
+    margin: 0px;
+
+    border: 2px solid white;
+    text-align: center;
+}
+
+.cell img{
+    border: 5px solid white;
+}
+
+.images-container image {
+    max-width:150px;
+}
+
+.list-1-advice-images{
+     -webkit-box-shadow: 0px 0px 4px 0px #000000 !important;
+     box-shadow: 0px 0px 4px 0px #000000 !important;
+     border: 7px solid #FFFFFF;
+     background-color: white;
+     margin: 10px;
+ }
+
+.list-2-advice-images{
+    -webkit-box-shadow: 0px 0px 4px 0px #000000 !important;
+    box-shadow: 0px 0px 4px 0px #000000 !important;
+    border: 7px solid #FFFFFF;
+    background-color: white;
+    margin: 10px;
+}
+
+.product-url-source-advice {
+    min-height: 100px;
+    padding: 20px;
+}
+
+
+.exp-container{
+    align-items: flex-start;
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.exp-container > div img {
+    width: 64px;
+}
+
+.custom-source-container {
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.custom-source-container  > div img {
+    width: 64px;
+}
+
+.product-url-advice-div {
+
+}
+
+.erase-url-advice{
+    color: #00e3a7;
+}
+
+.product-sort-icon{
+    opacity: 0.5;
+}
+
+.url-advice{
+    display: flex;
+    flex-wrap: wrap;
+}
+.url-advice  > div {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 32px;
+    flex-grow: 1;
+    width: 27%;
+}
+
+.url-advice > div > div {
+
+    margin: 10px 10px;
+    flex-basis: calc(50% - 20px);
+
+}
+.url-advice img {
+    width: 100%;
+    height: auto;
+}
+#datatable{
+     width: 98% !important;
+     padding: 5px;
+     margin: 10px;
+ }
+
+#datatable th{
+    padding: 10px !important;
+    margin: 10px !important;
+}
+
+#datatable td{
+    padding: 10px !important;
+    margin: 10px !important;
+}
+#datatable_filter {
+    float: left !important;
+}
+
+#datatable_filter input.datatable-search-clients-input {
+    border: 1px solid #c4c1c1 !important;
+    width: 400px;
+    background-color: #fdfdfd;
+}
+
+#datatable_filter input.datatable-search-clients-input::placeholder {
+   color: #4e4e4e;
+}
+
+#datatable_filter input{
+    border: none !important;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+#datatable_filter input::placeholder::before {
+    color:#666;
+    content:"AMO ID";
+}
+
+.paper-a4 {
+    width: 100%;
+    height:100%;
+    top:0px;
+    bottom:0px;
+    margin: auto;
+    margin-top: 0px !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.print-amo-id{
+    width: 100px;
+    height: 20px;
+    color: black;
+    position:absolute;
+    bottom:30px;
+    left:0;
+    margin-bottom: 0;
+    margin-left: 10px;
+    z-index: 3;
+}
+
+ .print-logo-capsula{
+     position: absolute;
+     left: 50%;
+     bottom: 0 !important;
+     transform: translate(-50%, 0);
+     margin: 0 auto;
+     z-index: 2;
+}
+
+/* 1-й Печатный лист верхняя линия */
+
+.list-1-heading{
+    margin-top: 2rem;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: black;
+    letter-spacing: -1px;
+}
+
+.list-1-second-heading{
+    margin-top: 4rem;
+    margin-left: 3px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: black;
+    letter-spacing: -1px;
+}
+
+.list-1-product-first-container{
+     display: flex;
+     align-content: space-between;
+     margin-left: -5px;
+     height: 240px;
+ }
+
+.list-1-product-box{
+    margin: 10px;
+    padding: 10px;
+    flex: 2 3 240px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;
+    box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;
+    /*background-color: white;*/
+
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: space-around;
+    width: 150px;
+    height: 248px !important;
+    background-color: white;
+
+ }
+
+.list-1-product-image{
+    /*border: 1px solid salmon;*/
+    max-width: 150px;
+    overflow: hidden;
+}
+.list-1-product-image img{
+    width: 130px;
+}
+
+.list-1-product-info{
+}
+
+.list-1-product-name{
+    font-weight: bold;
+}
+
+.list-1-product-brand{}
+
+
+.list-1-product-price {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* 2-й Печатный лист вторая линия */
+.list-1-product-second-container{
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: hidden;
+    margin-left: 0;
+}
+
+/*.list-1-product-second-box{*/
+/*    margin: 10px 44px 20px 5px ;*/
+/*    padding: 10px;*/
+/*    -webkit-box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;*/
+/*    box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;*/
+/*    !*background-color: white;*!*/
+
+/*    display: flex;*/
+/*    flex-flow: row wrap;*/
+/*    justify-content: space-between;*/
+/*    align-items: flex-start;*/
+/*    align-content: flex-start;*/
+/*    width: 335px;*/
+/*    height: 400px;*/
+/*    background-color: white;*/
+/*}*/
+
+.list-1-product-second-box{
+    margin: 10px 37px 20px 5px ;
+    padding: 7px 10px 10px 10px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;
+    box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;
+    /*background-color: white;*/
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 335px;
+    /*height: 407px;*/
+    height: 421px;
+    background-color: white;
+}
+
+.list-1-product-second-box:nth-child(3){
+    margin-right:13px;
+}
+
+
+.list-1-product-second-image{
+    margin: 4px 5px 6px 2px ;
+    padding: 2px;
+    max-width: 130px;
+    /*height: 165px;*/
+    height: 172px;
+    overflow: hidden;
+}
+.list-1-product-second-image img{
+    width: 130px;
+}
+
+.list-1-product-secondary-name{
+    width:100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-left: 4px;
+    padding-top: 5px !important;
+    line-height: 1.2;
+    min-height: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+}
+.list-1-product-secondary-name span{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* 2-й Печатный лист верхняя линия Переверстка */
+.list-2-product-second-container{
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    overflow: hidden;
+    margin-left: 0;
+}
+
+.list-2-product-second-box{
+    margin: 10px 47px 20px 5px ;
+    padding: 7px 10px 10px 10px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;
+    box-shadow: 0px 0px 10px 0px rgba(58, 58, 58, 0.2) !important;
+    /*background-color: white;*/
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 335px;
+    height: 364px;
+    background-color: white;
+}
+
+.list-2-product-second-box:nth-child(3){
+    margin-right:13px;
+}
+
+
+.list-2-product-second-image{
+    margin: 4px 5px 5px 2px ;
+    padding: 2px;
+    max-width: 130px;
+    height: 165px;
+    overflow: hidden;
+}
+.list-2-product-second-image img{
+    height: 100%;
+    width: auto;
+}
+
+.price-table-div {
+    padding-top: 100px;
+}
+
+.paging_simple_numbers{
+
+}
+
+.paging_simple_numbers .disabled{
+    color: lightgray !important;
+
+}
+
+.paging_simple_numbers span{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.paging_simple_numbers span a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.paging_simple_numbers span .paginate_button{
+    color: lightgray;
+}
+
+.paging_simple_numbers span .current{
+    font-weight: bold !important;
+    color: #5e50ee !important;
+}
+
+.filloption {
+    cursor: pointer;
+    margin: 0 5px;
+    min-height: 20px;
+    min-width: 20px;
+}
+.filloption select{
+    border: 1px solid black;
+}
+
+.imgSmall img{
+    margin-bottom: 10px !important;
+}
+
+@media print {
+    table {
+        border: none !important;
+    }
+    th, td {
+        border: none !important;
+    }
+
+    .pagebreak { page-break-before: always; }
+
+}

@@ -1,0 +1,86 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.datepicker
+  +screen($tablet)
+    width: 100%
+
+  select
+    background: $green-lightest url(../img/arrow_down.svg) no-repeat right 1rem top 55%/14px
+    border: none
+    box-shadow: none
+    height: 42px
+    +font(22px, 24px)
+    +screen($tablet)
+      height: 46px
+
+    option
+      background-color: $white
+
+    &:not(:last-child)
+      margin-right: 16px
+      +screen($tablet)
+        margin-bottom: 16px
+
+    &:first-child
+      width: 126px
+
+    &:nth-child(2)
+      width: 165px
+
+    &:last-child
+      width: 143px
+
+  .date-dropdowns
+    display: flex
+    box-sizing: border-box
+    padding-left: 40px
+    position: relative
+    +screen($tablet)
+      flex-direction: column
+
+      select
+        width: 100%
+        max-width: 100%
+
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+      width: 20px
+      height: 19px
+      background: url(../img/icons/datepicker.svg)
+      +screen($tablet)
+        transform: none
+        top: 10px
+
+  &__text
+    margin-bottom: 16px
+    color: $gray-light
+    +font(18px, 22px)
+
+.privacy
+  margin-top: auto
+  +font(14px, 20px)
+  box-sizing: border-box
+  padding-left: 40px
+  position: relative
+  max-width: 490px
+  +screen($tablet)
+    max-width: 100%
+    margin-top: 40px
+
+  &:before
+    content: ''
+    width: 24px
+    height: 24px
+    position: absolute
+    left: 0
+    top: 0
+    border-radius: 4px
+    background-color: $green-light-2
+
+
+

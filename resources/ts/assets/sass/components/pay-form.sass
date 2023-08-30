@@ -1,0 +1,245 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.pay
+  &_forms
+    form
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      
+      input
+        flex: 1 1 25%
+        
+      .next_button
+        flex: 0 0 100%
+        margin-top: 23px
+        
+.paid
+  text-align: center
+  
+  &-container
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    margin: 10px 0
+    flex-direction: column
+    +screen($tablet)
+      align-items: center
+
+.payment-method
+  height: 40px
+  background: url(../img/payments.png) center center no-repeat
+  width: 100%
+  margin-top: 20px
+  opacity: .6
+
+.pay-method
+  margin-top: 50px
+  display: flex
+  flex-direction: column
+  +screen($tablet)
+    align-items: center
+    margin: 0
+
+  h3
+    +screen($tablet)
+      width: 310px
+      +font(14px, 20px, 700)
+
+  &__radio
+    width: 370px
+    +screen($tablet)
+      width: 310px
+
+    &:not(:last-child)
+      margin-bottom: 16px
+
+    &-wrap
+      box-sizing: border-box
+      max-width: 370px
+      width: 100%
+      min-height: 48px
+      height: 100%
+      border-radius: 8px
+      border: 1px solid $white-dirt
+      display: flex
+      align-items: center
+      padding: 12px 24px
+      position: relative
+
+      &:after
+        content: ''
+        width: 20px
+        height: 20px
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 14px
+        border: 1px solid $white-dirt
+
+      span
+        color: $gray-light
+
+    &.on
+      .pay-method__radio-wrap
+        border: 1px solid $green
+
+        &:after
+          border-color: $green
+          background-color: $green
+
+      .card-block
+        width: 370px
+        height: 193px
+        border-radius: 8px
+        background-color: $white-why
+        margin: 10px 0
+        box-sizing: border-box
+        padding: 17px 24px
+        +screen($tablet)
+          width: 310px
+
+        &__field
+          height: 38px
+          border-radius: 4px
+          background: $white-clean
+          overflow: hidden
+          position: relative
+
+          &:not(:last-child)
+            margin-bottom: 16px
+
+          input
+            width: 100%
+            height: 100%
+            display: block
+            padding: 8px 16px
+            +font(16px, 22px)
+            border: none
+
+          &_number
+            width: 100%
+
+            &:after
+              content: ''
+              width: 31px
+              height: 10px
+              position: absolute
+              right: 16px
+              top: 50%
+              transform: translateY(-50%)
+              background: url(../img/logo_visa.svg)
+
+            input
+              padding-right: 50px
+
+          &_date
+            width: 89px
+            display: inline-block
+            margin-right: 12px
+
+          &_cvc
+            width: 107px
+            display: inline-block
+
+          &_name
+            width: 287px
+            +screen($tablet)
+              width: 100%
+
+
+    input
+      display: none
+
+.total-price
+  display: flex
+  flex-direction: column
+  max-width: 300px
+  margin-top: auto
+  +screen($tablet)
+    width: 303px
+    margin: 0 0 10px 0
+
+  &__item,
+  &__amount
+    display: flex
+    justify-content: space-between
+    position: relative
+    +font(18px, 22px)
+    +screen($tablet)
+      +font(16px, 20px)
+
+  &__item
+    height: 21px
+    margin-bottom: 16px
+    +screen($tablet)
+      margin-bottom: 8px
+
+    &_coupon
+      color: $green
+
+      &:after
+        border-color: $green !important
+
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: calc(100% - 4px)
+      box-sizing: border-box
+      border-bottom: 1px dotted $black
+      z-index: 1
+
+    div
+      background-color: $white-smoke
+      z-index: 3
+      +screen($tablet)
+        background-color: $white-clean
+
+  &__amount
+    align-items: flex-end
+    &-count
+      +font(18px, 22px)
+
+  &__separator
+    width: 100%
+    height: 1px
+    background: $black
+    margin: 10px 0 26px
+    +screen($tablet)
+      margin: 0 0 8px
+
+  &__link
+    margin-top: 26px
+    display: block
+    position: relative
+    box-sizing: border-box
+    padding: 0 0 0 28px
+    +font(16px, 20px)
+    color: $green
+    width: fit-content
+    +screen($tablet)
+      display: none
+
+    &:before
+      content: ''
+      width: 16px
+      height: 12px
+      position: absolute
+      background: url(../img/icons/ticket.svg) no-repeat center/contain
+      top: 50%
+      transform: translateY(-50%)
+      left: 0
+
+    &:after
+      content: ''
+      width: 185px
+      height: 1px
+      background: $green
+      position: absolute
+      bottom: 0
+      right: 0

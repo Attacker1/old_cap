@@ -1,0 +1,78 @@
+/*inputs*/
+input[type="text"].compact, input[type="number"].compact {
+  min-width: unset;
+  width: 40px;
+  text-indent: 0;
+  height: 23px;
+}
+
+/*Buttons*/
+.h-btn {
+  &-circle {
+    padding: 8px!important;
+    &.h-btn-s {
+      padding: 4px!important;
+    }
+    &.h-btn-xs {
+      padding: 2px!important;
+    }
+  }
+}
+
+
+// transitions
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+// collapse
+
+.h-collapse {
+  &-item {
+    &.relative {
+      position: relative;
+      .h-icon-help-solid {
+        position: absolute;
+        top: 13px;
+        right: 21px;
+      }
+    }
+  }
+}
+
+
+// form items in table
+th,td {
+  .date {
+    padding: 0;
+    .h-input.h-datetime-show {
+      width: 110px;
+    }
+  }
+}
+
+.h-numberinput {
+  &.compact {
+    width: 40px;
+    text-indent: 0;
+    input {
+      min-width: unset;
+      text-indent: unset;
+    }
+  }
+}

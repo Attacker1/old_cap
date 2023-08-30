@@ -1,0 +1,156 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.thumb
+  width: 160px
+  height: 160px
+
+  &-grid
+    display: grid
+    grid-gap: 17px
+    padding: 0 0 0 20px
+    width: fit-content
+    box-sizing: border-box
+    +screen($tablet)
+      margin: 0 auto
+
+    +screen($tablet)
+      min-height: 280px
+
+    .label-thumb
+      box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.04)
+      background-color: $white-clean
+      border: 2px solid $gains
+      border-radius: 26px
+
+      .thumb
+        width: 176px
+        height: 160px
+
+      span
+        width: 156px
+
+    &_negative
+      .label-thumb
+        &.on
+          border-color: $red
+          background-color: $red-light
+          &:before
+            background-image: url(../img/negative.svg)
+
+    &_five
+      grid-template-columns: repeat(3, 180px)
+      grid-template-rows: repeat(auto-fit, minmax(165px, 1fr))
+      +screen($desktop-sm)
+        grid-template-columns: repeat(3, 1fr)
+
+      .label-thumb
+        padding: 5px
+        &:nth-child(3)
+          grid-row: span 2
+
+          .thumb
+            height: 320px
+
+        .thumb
+          +screen($tablet)
+            width: 150px
+
+    &_three
+      grid-template-columns: repeat(3, 180px)
+      grid-template-rows: 346px
+      +screen($desktop-sm)
+        grid-template-columns: repeat(3, 1fr)
+      +screen($tablet)
+        padding: 0 20px 0
+        grid-template-rows: 280px
+
+      .label-thumb
+        padding: 5px
+
+        .thumb
+          width: 160px
+          height: 280px
+          +screen($tablet)
+            width: 150px
+            height: 230px
+
+    &_max
+      grid-template-columns: repeat(auto-fit, 180px)
+      grid-template-rows: repeat(auto-fit, minmax(165px, 1fr))
+      width: 100%
+      +screen($tablet)
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))
+        padding: 0 20px 0
+        min-width: fit-content
+        width: 100%
+      +screen(604)
+        grid-template-rows: repeat(2, minmax(165px, 1fr))
+
+      .thumb
+        width: 155px !important
+        height: 125px !important
+
+      .label-thumb
+        padding: 10px
+        width: 176px
+        height: 176px
+        .thumb
+          margin: 0
+
+        span
+          +screen($tablet)
+            white-space: normal
+
+      &_five
+        +screen(604)
+          grid-template-columns: repeat(5, minmax(177px, 1fr))
+
+      &_four
+        +screen(604)
+          grid-template-columns: repeat(4, minmax(177px, 1fr))
+
+      &_three
+        +screen(604)
+          grid-template-columns: repeat(3, minmax(177px, 1fr))
+
+    &_under
+      grid-template-columns: repeat(2, 200px)
+      row-gap: 50px
+      column-gap: 17px
+      grid-template-rows: 280px 280px
+      +screen($tablet)
+        grid-template-rows: 280px
+        grid-template-columns: repeat(4, minmax(177px, 1fr))
+        justify-content: flex-start
+        padding: 0 20px
+        box-sizing: border-box
+
+      .label-thumb
+        span
+          width: 180px
+
+    input
+      display: none
+      
+  &-another
+    &_text
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      color: #A3A3A3
+      font-size: 20px
+      line-height: 24px
+      font-weight: 700
+      width: calc(100% - 40px)
+        
+  &-full
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    object-fit: contain
+    +screen($tablet)
+      width: 100%
+      height: auto

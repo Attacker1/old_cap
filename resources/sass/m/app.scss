@@ -1,0 +1,33 @@
+.brand {
+	
+	// Logo
+	.brand-logo {
+		a {
+			color: #00e3a7;
+            padding-left: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.01rem;
+            font-size: 1.57rem;
+            animation: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s normal forwards 1 fadein;
+		}
+
+		img {
+			height: 22px;
+			width: auto; 
+			margin-right:5px 
+		}
+
+		// Minimized Aside Mode
+		.aside-minimize:not(.aside-minimize-hover) & {
+			span {
+				display: none;
+			}
+		}
+	}
+}
+
+.content {
+	padding: 0px !important; 
+	margin-top:25px;
+}
+

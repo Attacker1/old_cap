@@ -1,0 +1,102 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.question
+  background-color: $white-smoke
+  height: calc(var(--vh, 1vh) * 100)
+  display: flex
+  position: relative
+  +screen($tablet)
+    height: calc(var(--vh, 1vh) * 100 - 80px)
+    width: 100%
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+  & > .disclaimer
+    display: none
+    +screen($tablet)
+      display: none
+      margin: 0
+      
+  label
+    font-size: 20px
+    line-height: 24px
+    display: block
+
+  &-head
+    width: 100%
+    box-sizing: border-box
+    padding: 40px 0 30px 7%
+    display: flex
+    flex-direction: column
+    position: relative
+    +screen($tablet)
+      background: $white-clean
+      align-items: center
+      padding: 35px 19.5px 20px
+      
+      .disclaimer
+        display: none
+
+      .total-price
+        display: none
+    
+    label
+      background-color: #fff
+      padding: 64px 33px
+      margin-top: 45px
+      max-width: 303px
+      width: 100%
+      border-radius: 20px
+      position: relative
+      box-shadow: 8px 12px 40px rgba(0, 0, 0, 0.08)
+      z-index: 1
+      box-sizing: border-box
+      +screen($tablet)
+        max-width: 336px
+        margin-top: 0
+        padding: 16px 85px 16px 20px
+        font-size: 12px
+        line-height: 18px
+        font-weight: 300
+        
+      &:before
+        content: ''
+        position: absolute
+        top: -53px
+        right: 26px
+        width: 106px
+        height: 106px
+        border-radius: 50%
+        box-sizing: border-box
+        border: 2px solid $green
+        background: url("../img/anketa/question_face.jpg") center/cover no-repeat
+        +screen($tablet)
+          width: 70px
+          height: 70px
+          top: -35px
+          right: 22px
+          
+      &:after
+        content: ''
+        position: absolute
+        top: 60%
+        transform: translateY(-40%) rotate(45deg)
+        right: -15px
+        background: $white-clean
+        width: 30px
+        height: 30px
+        +screen($tablet)
+          bottom: -8px
+          top: auto
+          left: 80%
+          transform: translateX(-20%) rotate(45deg)
+          z-index: -1
+        
+  &-appeal::first-letter
+    text-transform: capitalize !important
+
+  &_upload
+    +screen($tablet)
+      justify-content: flex-start

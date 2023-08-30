@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.disclaimer
+  background-color: $pink-light
+  border-radius: 16.25px
+  padding: 20px
+  font-size: 12px
+  line-height: 18px
+  margin-top: auto
+  color: $black
+  max-width: 303px
+  font-weight: 500
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease, -webkit-box-shadow .15s ease
+  flex-shrink: 0
+  +screen($tablet)
+    padding: 24px
+    overflow: hidden
+
+  div
+    p
+      &:last-child
+        margin: 0
+
+  input
+    width: 100%
+
+  a
+    color: $black
+    text-decoration: underline
+
+  & .error
+    color: red
+
+  & .ok
+    color: green
+
+  & .alert
+    color: red
+    text-align: center
+    font-size: 90%
+    opacity: 0.8
+
+  & + .question
+    border-top: none
+
+  & label
+    cursor: pointer
+
+  button
+    margin: 0 0 0 13px
+    +screen($tablet)
+      margin: 13px 0 0 0
+
+:not(.disclaimer) + .question.text
+  flex: 0 0 100%
+
+  &:nth-child(2n+1)
+    border-top: none
+    margin-left: 0
+    padding-left: 0
+
+  &:nth-child(n+1)
+    margin-right: 0
+    padding-right: 0
+
+  

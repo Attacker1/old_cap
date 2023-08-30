@@ -1,0 +1,136 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.pinned
+  margin: 0
+  position: fixed
+  top: 30px
+  z-index: 100
+  width: 550px
+  left: 59%
+  transform: translateX(-41%)
+  +screen(2000)
+    left: 61%
+    transform: translateX(-39%)
+  +screen(1500)
+    left: 63%
+    transform: translateX(-37%)
+  +screen(1300)
+    left: 65%
+    transform: translateX(-35%)
+  +screen($tablet)
+    padding-top: 30px
+    position: relative
+    top: auto
+    left: auto
+    width: 335px
+    transform: none
+    margin: 0 auto
+  +screen(555)
+    padding-top: 20px
+    width: 275px
+    transform: translateX(30px)
+
+  & > div
+    display: flex
+    align-items: center
+
+  .progress-percent
+    border: none
+    font-size: 18px
+    line-height: 24px
+    font-weight: 400
+    color: $green
+
+.progress
+  width: 100%
+  overflow: hidden
+  height: 50px
+  position: relative
+
+  .line
+    position: absolute
+    display: flex
+    width: 80%
+    left: 10%
+    top: 50%
+
+  .done
+    background-color: $green
+    _height: 4px
+    _width: 0
+    content: ""
+    _position: absolute
+    width: 0
+    height: 3px
+    _background-color: #E2E2E2
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+
+  .more
+    background-color: $gains
+    content: ""
+    width: 100%
+    height: 3px
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+
+  .stepers
+    position: absolute
+    width: 100%
+    height: 50px
+    display: flex
+    justify-content: space-between
+
+  ._steper
+    &:before
+      content: ''
+      position: absolute
+      width: 100%
+      height: 3px
+      background-color: $gains
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+
+  .steper
+    flex-basis: 100%
+    text-align: center
+    position: relative
+
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 24px
+      height: 24px
+      border-radius: 50%
+      background-color: $gains
+      +screen($tablet)
+        width: 12px
+        height: 12px
+
+    &:last-child:before,
+    &:first-child:before
+      width: 50%
+
+    &:first-child:before
+      left: auto
+      right: 0
+
+    &.on
+      &:after,
+      &:before
+        background-color: $green
+
+      &.current
+        &:after
+          width: 40px
+          height: 40px
+          +screen($tablet)
+            width: 20px
+            height: 20px

@@ -1,0 +1,446 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.lifestyle
+  width: 56.8%
+  border-radius: 24px 0 0 24px
+  flex-shrink: 0
+  background: $white-clean
+  +screen($tablet)
+    width: 100%
+    padding: 0
+    flex: 1 1 100%
+      
+  .image
+    background-size: cover
+    background-position: center -40px
+    background-repeat: no-repeat
+    -webkit-box-flex: 0
+    width: 380px
+    height: 430px
+    flex-shrink: 0
+    position: relative
+    box-sizing: border-box
+    padding-bottom: 60px
+    +screen($tablet)
+      width: 309px
+      height: 369px
+      
+  .answers
+    height: 100%
+    flex: 0 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+    padding: 0
+
+    .answers__body
+      .image
+        label
+          cursor: pointer
+          user-select: none
+          font-size: 16px !important
+          line-height: 19px !important
+          font-weight: 400 !important
+          color: $gray-dark
+          position: absolute
+
+          input
+            display: none
+
+          &:not(:first-of-type):not(:last-of-type)
+            width: 35px
+            height: 29px
+            border: 2px solid #00E3A7
+            border-radius: 12px
+            background: url("../img/like_green.svg") center/ 50% no-repeat, #fff
+            z-index: 1
+            +screen($tablet)
+              width: 29px
+              height: 25px
+              background-size: 50%
+
+            &.on
+              background: url("../img/like_white.svg") center/ 50% no-repeat, $green
+
+          &:first-of-type,
+          &:last-of-type
+            width: auto
+            padding-left: 31px
+
+          &:first-of-type
+            background: url("../img/ion_heart-like.svg") no-repeat 0 100%
+            bottom: 40px
+            left: 20px
+
+            &.on
+              background-image: url("../img/ion_heart-like-colored.svg")
+              color: $green
+
+          &:last-of-type
+            background: url("../img/ion_heart-dislike.svg") no-repeat 0 100%
+            bottom: 0
+            left: 20px
+
+            &.on
+              background-image: url("../img/ion_heart-dislike-colored.svg")
+              color: $pink
+
+  &_five
+    .image
+      background-size: 100%
+      background-position: center -10px
+
+      label
+        &:nth-of-type(2)
+          top: 144px
+          right: 17px
+          +screen($tablet)
+            top: 110px
+            right: 10px
+            
+        &:nth-of-type(3)
+          top: 135px
+          left: 10px
+          +screen($tablet)
+            top: 114px
+            left: 3px
+            
+        &:nth-of-type(4)
+          top: 34px
+          left: 173px
+          +screen($tablet)
+            top: 34px
+            left: 138px
+
+        &:nth-of-type(5)
+          top: 308px
+          right: 6px
+          +screen($tablet)
+            top: 240px
+
+        &:nth-of-type(6)
+          top: 270px
+          left: 15px
+          +screen($tablet)
+            top: 220px
+
+    &__second
+      .image
+        background-size: 100%
+
+        label
+          &:nth-of-type(2)
+            top: 40px
+            right: 48px
+            +screen($tablet)
+              top: 20px
+              right: 38px
+
+          &:nth-of-type(3)
+            top: 40px
+            left: 20px
+            +screen($tablet)
+              top: 30px
+              left: 20px
+
+          &:nth-of-type(4)
+            top: 180px
+            left: 20px
+            +screen($tablet)
+              top: 130px
+              left: 20px
+
+          &:nth-of-type(5)
+            top: 220px
+            right: 50px
+            +screen($tablet)
+              top: 170px
+              right: 40px
+
+          &:nth-of-type(6)
+            top: 320px
+            left: auto
+            right: 40px
+            +screen($tablet)
+              top: 230px
+              right: 40px
+
+    &__third
+      .image
+        label
+          &:nth-of-type(2)
+            top: 15px
+            right: 195px
+            +screen($tablet)
+              top: 10px
+              right: 160px
+
+          &:nth-of-type(3)
+            top: 45px
+            left: 22px
+            +screen($tablet)
+              top: 35px
+
+          &:nth-of-type(4)
+            top: 40px
+            right: 11px
+            left: auto
+            +screen($tablet)
+              top: 30px
+              right: 26px
+
+          &:nth-of-type(5)
+            top: 280px
+            right: 10px
+            +screen($tablet)
+              top: 240px
+              right: 13px
+
+          &:nth-of-type(6)
+            top: 220px
+            left: -11px
+            +screen($tablet)
+              top: 180px
+              left: 20px
+              
+    &__fourth
+      .image
+        background-size: 120%
+
+        label
+          &:nth-of-type(3)
+            top: 120px
+            +screen($tablet)
+              top: 90px
+
+          &:nth-of-type(4)
+            top: 65px
+            left: 168px
+            +screen($tablet)
+              top: 55px
+              left: 137px
+
+          &:nth-of-type(5)
+            top: 260px
+                
+    &__fifth
+      .image
+        label
+          &:nth-of-type(2)
+            top: 40px
+            right: 172px
+            +screen($tablet)
+              top: 30px
+              right: 140px
+
+          &:nth-of-type(4)
+            top: 50px
+            left: auto
+            right: 27px
+            +screen($tablet)
+  
+          &:nth-of-type(5)
+            top: 230px
+            right: 0
+            +screen($tablet)
+  
+          &:nth-of-type(6)
+            top: 283px
+            left: -1px
+            +screen($tablet)
+              top: 240px
+
+    &__sixth
+      .image
+        label
+          &:nth-of-type(2)
+            top: 65px
+            right: 168px
+            +screen($tablet)
+              top: 45px
+              right: 135px
+
+          &:nth-of-type(3)
+            top: 80px
+            left: 21px
+            +screen($tablet)
+              left: 27px
+  
+          &:nth-of-type(4)
+            top: 90px
+            left: auto
+            right: 15px
+            +screen($tablet)
+              right: 29px
+  
+          &:nth-of-type(5)
+            top: 240px
+            right: 30px
+            +screen($tablet)
+              top: 190px
+
+          &:nth-of-type(6)
+            top: 260px
+            left: 20px
+            +screen($tablet)
+              top: 170px
+              left: 25px
+    
+    &__seventh
+      .image
+        label
+          &:nth-of-type(4)
+            left: 153px
+
+          &:nth-of-type(5)
+            right: 20px
+            top: 280px
+            +screen($tablet)
+              top: 240px
+  &_six
+    .image
+      background-position: center -30px
+
+      label
+        &:nth-child(2)
+          top: 40px
+          left: 30px
+
+        &:nth-child(3)
+          top: 20px
+          right: 28px
+
+        &:nth-child(4)
+          top: 120px
+          right: 38px
+
+        &:nth-child(5)
+          top: 310px
+          right: 45px
+          +screen($tablet)
+            top: 260px
+            
+        &:nth-child(6)
+          top: 285px
+          left: 46px
+          +screen($tablet)
+            top: 240px
+            
+        &:nth-child(7)
+          top: 235px
+          left: 150px
+          +screen($tablet)
+            top: 200px
+            left: 120px
+
+    &__second
+      .image
+        label
+          &:nth-of-type(3)
+            right: 40px
+
+          &:nth-of-type(4)
+            top: 220px
+            right: 30px
+
+          &:nth-of-type(5)
+            left: 30px
+
+          &:nth-of-type(6)
+            top: 210px
+            left: 20px
+            +screen($tablet)
+              top: 180px
+              left: 10px
+
+          &:nth-of-type(7)
+            left: 150px
+
+    &__third
+      .image
+        label
+          &:nth-of-type(2)
+            top: 40px
+            left: 11px
+
+          &:nth-of-type(3)
+            top: 60px
+            left: 132px
+            +screen($tablet)
+              left: 150px
+
+          &:nth-of-type(4)
+            top: 120px
+            right: 38px
+            +screen($tablet)
+              right: 18px
+
+          &:nth-of-type(5)
+            top: 290px
+            right: 115px
+            +screen($tablet)
+              top: 220px
+
+          &:nth-of-type(6)
+            top: 153px
+            left: 156px
+            +screen($tablet)
+              top: 130px
+
+              
+          &:nth-of-type(7)
+            top: 225px
+            left: 8px
+            +screen($tablet)
+              top: 200px
+              
+  &_four
+    .image
+      background-position: center
+      background-size: 100%
+
+      label
+        &:nth-of-type(2)
+          top: 125px
+          left: 0
+
+        &:nth-of-type(3)
+          top: 60px
+          left: 183px
+          +screen($tablet)
+            left: 148px
+
+        &:nth-of-type(4)
+          top: 110px
+          right: 20px
+
+        &:nth-of-type(5)
+          top: 280px
+          right: 10px
+          +screen($tablet)
+            top: 240px
+
+  &_three
+    & > .answers
+      & > label
+        &:nth-child(2)
+          top: -300px
+          transform: translateX(-30px)
+          +screen($tablet)
+            top: -270px
+
+        &:nth-child(3)
+          top: -240px
+          left: 0
+          +screen($tablet)
+            top: -150px
+            left: 20px
+
+        &:nth-child(4)
+          top: -230px
+          right: 20px
+          +screen($tablet)
+            top: -170px
+            right: 30px

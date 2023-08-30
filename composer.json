@@ -1,0 +1,95 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "artsur/yandex-object-storage-provider": "^1.2",
+        "bnbwebexpertise/laravel-attachments": "^1.0",
+        "doctrine/dbal": "2.13",
+        "fideloper/proxy": "^4.0",
+        "intervention/image": "^2.5",
+        "irazasyed/telegram-bot-sdk": "^3.0",
+        "ixudra/curl": "^6.21",
+        "jean85/pretty-package-versions": "^1.5 || ^2.0",
+        "laravel/framework": "^6.0",
+        "laravel/helpers": "^1.4",
+        "laravel/passport": "^9.0",
+        "laravel/tinker": "^2.0",
+        "league/flysystem-aws-s3-v3": "~1.0",
+        "maatwebsite/excel": "~3.1",
+        "nesbot/carbon": "^2.50",
+        "phpmailer/phpmailer": "^6.0",
+        "riverskies/laravel-mobile-detect": "^1.3",
+        "sentry/sentry-laravel": "^2.7",
+        "spatie/backtrace": "^1.2",
+        "spatie/laravel-backup": "^6.16",
+        "stechstudio/laravel-ssh-tunnel": "^3.1",
+        "venturecraft/revisionable": "1.*",
+        "wildtuna/boxberry-sdk": "^0.7.8",
+        "yajra/laravel-datatables-oracle": "~9.0",
+        "yoeunes/toastr": "^1.2"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
+        "barryvdh/laravel-ide-helper": "2.7.0",
+        "beyondcode/laravel-dump-server": "^1.0",
+        "cdekmarketteam/moysklad": "dev-customerorder-positions as 1.5.4",
+        "filp/whoops": "^2.0",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^3.0",
+        "phpunit/phpunit": "^7.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "laravel/dusk"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/2capsula/moysklad"
+        }
+    ]
+}

@@ -1,0 +1,327 @@
+@use '../abstracts/variables' as *
+@use '../abstracts/mixins' as *
+
+.answers
+  display: flex
+  width: 56.8%
+  border-radius: 24px 0 0 24px
+  background-color: $white-clean
+  flex-shrink: 0
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  +screen($tablet)
+    width: 100%
+    flex-grow: 1
+    border-radius: 0
+    justify-content: space-between
+
+  &__header,
+  &__body,
+  &__footer
+    width: 100%
+    box-sizing: border-box
+    padding-left: 90px
+    +screen($tablet)
+      padding: 0
+
+  &__header,
+  &__footer
+    flex: 0 0 auto
+    height: 110px
+
+  &__header
+    +screen($tablet)
+      height: 1px
+
+  &__footer
+    &_second
+      box-sizing: border-box
+      +screen($tablet)
+        padding: 0 20px
+      .next-question
+        width: 240px
+
+    &_column
+      +screen($tablet)
+        height: 199px
+        flex-direction: column
+        padding: 4px 36px 34px
+
+    .total-price
+      display: none
+      +screen($tablet)
+        display: flex
+
+
+  &__body
+    flex: 1 0 auto
+    overflow-y: auto
+    max-height: calc(100% - 227px)
+    padding: 40px 20px 40px 90px
+    position: relative
+    scrollbar-width: none
+    +screen($tablet)
+      padding: 20px
+      max-height: calc(var(--vh, 1vh) * 100 - 80px - 120px - 167px)
+      box-sizing: border-box
+
+    &::-webkit-scrollbar
+      display: none
+      background: transparent
+      width: 0
+      height: 0
+
+    &_payment
+      +screen($tablet)
+        max-height: calc(var(--vh, 1vh) * 100 - 80px - 120px - 167px - 99px)
+
+    &_coloros
+      flex-direction: row
+      flex-wrap: wrap
+      align-content: center
+      justify-content: space-between
+      +screen($tablet)
+        justify-content: center
+
+      label
+        max-width: 100%
+        width: 100px
+        height: 100px
+        display: flex !important
+        align-items: center
+        justify-content: center
+        border: 2px solid transparent
+        +screen($tablet)
+          width: 65px
+          height: 65px
+
+        &:nth-child(4)
+          border-color: $white-dirt
+
+        &.on
+          border-color: $green
+
+    &_grid
+      padding: 40px 0 40px 70px
+      +screen($tablet)
+        padding: 20px 20px 20px 0
+
+    &_flex
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      +screen($tablet)
+        align-items: center
+        justify-content: flex-start
+
+      &_second
+        justify-content: flex-start
+
+    &_photo
+      .photo-btn:not(:first-child)
+        display: none
+
+      .photo-btn:first-child
+        display: flex
+
+    &.answers__body_radio,
+    &.answers__body_checkbox
+      display: flex
+      flex-wrap: wrap
+
+      input
+        display: none
+
+      .label__radio,
+      .label__checkbox
+        max-width: 50%
+        width: 100%
+        +screen($tablet-xs)
+          max-width: 100%
+          width: 100%
+
+        &:not(:last-of-type)
+          margin-bottom: 22px
+          +screen($tablet)
+            margin-bottom: 16px
+
+        span
+          display: block
+          background: white
+          border: none
+          padding: 0 0 0 42px
+          min-height: 24px
+          position: relative
+          +font(20px, 28px)
+          color: $black
+          +screen($tablet)
+            +font(16px, 24px)
+
+          &:before
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            width: 24px
+            height: 24px
+            left: 0
+            background: $green-light-2
+            border-radius: 50%
+            +screen($tablet)
+              width: 18px
+              height: 18px
+
+        &.on
+          span
+            border: none
+
+            &:before
+              background: $green
+
+      &_column
+        flex-direction: column
+        justify-content: center
+        flex-wrap: nowrap
+        +screen($tablet)
+          justify-content: flex-start
+
+        .disclaimer
+          margin: 40px auto 0
+
+        .label__checkbox,
+        .label__radio
+          max-width: 100%
+
+    &.answers__body_checkbox
+      .label__checkbox
+        span
+          &:before
+            border-radius: 4px
+
+        &.on
+          span
+            &:before
+              background-color: $green-light-2
+
+            &:after
+              content: ''
+              width: 24px
+              height: 24px
+              position: absolute
+              top: 48%
+              transform: translateY(-52%)
+              left: 3px
+              background: url(../img/check.svg) no-repeat center/contain
+              +screen($tablet)
+                width: 18px
+                height: 18px
+
+    .disclaimer
+      display: none
+      +screen($tablet)
+        display: block
+        margin-top: 40px
+
+    & > label:not(.color-grid__item):not(.label__checkbox):not(.label__radio):not(.photo-btn)
+      margin: 5px 0
+      max-width: 336px
+      width: 100%
+      flex-shrink: 0
+      border-radius: 16px
+
+      input
+        display: none
+
+      &.on > span
+        border: 2px solid $green
+        color: $black
+
+        &:before
+          background: url('../img/logo_green.svg')
+
+      &.label-image
+        +screen($tablet)
+          flex-basis: 100%
+          cursor: pointer
+          text-align: center
+
+      & > span
+        box-sizing: border-box
+        font-size: 14px
+        line-height: 18px
+        font-weight: 700
+        border: 2px solid $white
+        background-color: $white
+        border-radius: 16px
+        cursor: pointer
+        padding: 16px 48px 16px 80px
+        text-align: left
+        height: 100%
+        color: $gray
+        position: relative
+        display: flex
+        align-items: center
+
+        &:before
+          content: ''
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          left: 24px
+          width: 32px
+          height: 32px
+          background: url('../img/logo_gray.svg') no-repeat
+
+        & > span
+          +font(14px, 28px)
+
+    input
+      max-width: 378px
+      width: 100%
+      +screen($tablet)
+        max-width: 336px
+
+  &__footer
+    display: flex
+    align-items: center
+    border-top: 1px solid rgba(0, 0, 0, .1)
+    +screen($tablet)
+      justify-content: center
+
+  &_row
+    flex-direction: row
+
+  &-emoji
+    & > label
+      & > span
+        &:before
+          content: '\01F381'
+          background: none !important
+          width: auto
+          height: auto
+          font-size: 20px
+
+      &:nth-child(2)
+        & > span:before
+          content: '🛍️'
+
+      &:nth-child(3)
+        & > span:before
+          content: '\01F469'
+
+      &:nth-child(4)
+        & > span:before
+          content: '⌛'
+
+  .phone_prefix
+    width: 40px
+    height: 38px
+    padding: 10px 6px 8px 0
+    line-height: 1.5
+    text-align: right
+
+
+
+
